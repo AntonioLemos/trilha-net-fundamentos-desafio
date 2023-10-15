@@ -28,7 +28,7 @@ namespace DesafioFundamentos.Models
             else if (veiculoSelecionado != null)
             {
                  var listaRestante = veiculos.Where(x => !x.Placa.Equals(veiculo.Placa)).ToList();
-                 listaRestante.AddRange(veiculos.Where(x => x.Placa.Equals(veiculo.Placa)).Select(x => { x.Ativo = false; return x; }).ToList());
+                 listaRestante.AddRange(veiculos.Where(x => x.Placa.Equals(veiculo.Placa)).Select(x => { x.Ativo = true; return x; }).ToList());
                  veiculos.CopyTo(0, listaRestante.ToArray(), 0, listaRestante.Count());            
             }
             else
